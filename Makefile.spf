@@ -1,0 +1,18 @@
+CC = gcc
+CFLAGS  = -g -Wall
+TARGET = Fahrenheit_to_Celsius_v2
+
+all: $(TARGET)
+
+
+$(TARGET)	: $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+	
+Fahrenheit_to_Celsius_v2.o: Fahrenheit_to_Celsius_v2.c
+	gcc -c $<
+	
+clean: 
+	$(RM) $(TARGET)
+
+
+
