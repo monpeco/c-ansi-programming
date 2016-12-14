@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS  = -g -Wall
-TARGET = Fahrenheit_to_Celsius_v2
+CFLAGS  = -g 
+TARGET = get_line
 
 all: $(TARGET)
 
