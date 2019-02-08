@@ -27,5 +27,21 @@ int getword(char *word, int lim)
   void ungetch(int);
   char *w = word;
   
-  return 0;
+  while(isspace(c = getchar()))
+    ;
+  if (c != EOF)
+    *w++ = c;
+  if (!isalpha(c)) {
+    *w = '\0';
+    return c;
+  }
+  for ( ; --lim > 0; w++)
+    if (!isalnum(*w = getch())) {
+      ungetch(*w);
+      break;
+    }
+  *w = '\0';
+  return word[0];
 }
+
+// compiled with -lncurses
